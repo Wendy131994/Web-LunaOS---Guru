@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 antialiased;
+    font-family: 'Archivo', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .bg-luna-hero { background-color: #F2E4F9; }
+  .bg-luna-dark { background: linear-gradient(180deg, #4A0A81 0%, #3A0766 50%, #4A0A81 100%); }
+  .bg-luna-signature { background-color: #F2E4F9; }
+  .bg-luna-surface { background-color: #F9F3FF; }
+
+  .glass-card {
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); transition: all 0.3s ease;
+  }
+
+  .glass-card:hover { border-color: rgba(242,228,249,0.3); transform: translateY(-4px); }
+
+  .glass-card-luna {
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(242, 228, 249, 0.35); border: 1px solid rgba(176, 86, 246, 0.12);
+    border-radius: 24px; box-shadow: 0 4px 30px rgba(74, 10, 129, 0.06); transition: all 0.3s ease;
+  }
+
+  .glass-card-luna:hover {
+    background-color: rgba(242, 228, 249, 0.55); border-color: rgba(176, 86, 246, 0.25);
+    box-shadow: 0 8px 40px rgba(242, 228, 249, 0.4); transform: translateY(-4px);
+  }
+
+  .btn-luna {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 font-bold transition-all duration-200;
+    font-family: 'Montserrat', sans-serif; background-color: #CDFF22; color: #240537;
+    border: 2px solid #400863;
+  }
+
+  .btn-luna:hover { background-color: #B8E61F; transform: translateY(-2px); box-shadow: 0 0 40px rgba(205, 255, 34, 0.3); }
+
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #B056F6;
+  }
+
+  .section-label-light {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #CDFF22;
+  }
+
+  @media (min-width: 768px) {
+    .section-label, .section-label-light { font-size: 1.125rem; }
+  }
+
+  .title-highlight { font-weight: 800; font-style: italic; color: #B056F6; }
+  .text-luna-glow { text-shadow: 0 0 40px rgba(242, 228, 249, 0.6); }
+}
+
+/* Floating icons animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.float-icon {
+  animation: float 3s ease-in-out infinite;
+  position: absolute;
+}
+
+.float-delay-1 { animation-delay: 0.2s; }
+.float-delay-2 { animation-delay: 0.7s; }
+.float-delay-3 { animation-delay: 1.2s; }
+.float-delay-4 { animation-delay: 0.5s; }
+.float-delay-5 { animation-delay: 1.0s; }

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LunaOS — El segundo cerebro de tu negocio | Gurú Soluciones</title>
+<meta name="description" content="Conoce a Luna, la IA de Gurú que gestiona tu CRM, microsegmenta tus clientes, crea contenido para redes sociales y lanza campañas de WhatsApp. Pide tu demo gratis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Archivo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{primary:{50:'#faf5ff',100:'#F2E4F9',200:'#E9D5FF',300:'#D8B4FE',400:'#B056F6',700:'#4A0A81',800:'#400863',900:'#240537'},secondary:{400:'#CDFF22',500:'#B8E61F'},luna:{signature:'#F2E4F9',glow:'#E9D5FF',surface:'#F9F3FF',deep:'#4A0A81',dark:'#240537',accent:'#B056F6'}},fontFamily:{sans:['Montserrat','system-ui','sans-serif'],body:['Archivo','system-ui','sans-serif'],display:['Montserrat','system-ui','sans-serif']}}}}
+</script>
+<style>
+body{font-family:'Archivo',system-ui,sans-serif;margin:0;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5,h6{font-family:'Montserrat',system-ui,sans-serif}
+.bg-luna-hero{background:linear-gradient(180deg,#4A0A81 0%,#3A0766 50%,#4A0A81 100%)}
+.bg-luna-signature{background-color:#F2E4F9}
+.bg-luna-surface{background-color:#F9F3FF}
+.glass-card{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background-color:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);border-radius:24px;box-shadow:0 4px 30px rgba(0,0,0,0.1);transition:all .3s ease}
+.glass-card:hover{border-color:rgba(242,228,249,0.3);transform:translateY(-4px)}
+.glass-card-luna{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background-color:rgba(242,228,249,0.35);border:1px solid rgba(176,86,246,0.12);border-radius:24px;box-shadow:0 4px 30px rgba(74,10,129,0.06);transition:all .3s ease}
+.glass-card-luna:hover{background-color:rgba(242,228,249,0.55);border-color:rgba(176,86,246,0.25);box-shadow:0 8px 40px rgba(242,228,249,0.4);transform:translateY(-4px)}
+.luna-pill{backdrop-filter:blur(30px);background-color:rgba(242,228,249,0.5);border:1px solid rgba(176,86,246,0.2);border-radius:9999px;padding:.5rem 1.25rem;font-size:.875rem;font-weight:600;color:#4A0A81;font-family:'Montserrat',sans-serif}
+.btn-luna{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;padding:1rem 2rem;font-weight:700;transition:all .2s;font-family:'Montserrat',sans-serif;background-color:#CDFF22;color:#240537;text-decoration:none;font-size:1.125rem}
+.btn-luna:hover{background-color:#B8E61F;transform:translateY(-2px);box-shadow:0 0 40px rgba(205,255,34,0.3)}
+.btn-luna-outline{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;border:2px solid rgba(255,255,255,0.3);padding:1rem 2rem;font-weight:700;color:#fff;transition:all .2s;font-family:'Montserrat',sans-serif;text-decoration:none;font-size:1.125rem}
+.btn-luna-outline:hover{background-color:rgba(255,255,255,0.1);transform:translateY(-2px)}
+.btn-luna-signature{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border-radius:9999px;padding:1rem 2rem;font-weight:700;transition:all .2s;font-family:'Montserrat',sans-serif;background-color:#F2E4F9;color:#4A0A81;border:1px solid rgba(176,86,246,0.2);text-decoration:none;font-size:1.125rem}
+.btn-luna-signature:hover{background-color:#E9D5FF;transform:translateY(-2px);box-shadow:0 0 40px rgba(242,228,249,0.5)}
+.title-highlight{font-weight:800;font-style:italic;color:#B056F6}
+.text-luna-glow{text-shadow:0 0 40px rgba(242,228,249,0.6)}
+.section-label{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.875rem;text-transform:uppercase;letter-spacing:.05em;color:#4A0A81}
+.section-label-light{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.875rem;text-transform:uppercase;letter-spacing:.05em;color:#F2E4F9}
+
+/* Floating icons animation */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.float-icon{animation:float 3s ease-in-out infinite;position:absolute;pointer-events:none}
+.float-delay-1{animation-delay:.2s}
+.float-delay-2{animation-delay:.7s}
+.float-delay-3{animation-delay:1.2s}
+.float-delay-4{animation-delay:.5s}
+.float-delay-5{animation-delay:1s}
+
+/* Rotating words */
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.rotating-word{animation:fadeInUp .4s ease-in-out}
+
+/* Responsive image */
+.resp-img{max-width:100%;height:auto}
+
+/* Utility */
+.object-contain{object-fit:contain}
+.mx-auto-img{margin-left:auto;margin-right:auto;display:block}
+
+/* Image showcase container */
+.image-showcase{border-radius:24px;overflow:hidden;border:2px solid rgba(176,86,246,0.15);box-shadow:0 8px 40px rgba(74,10,129,0.08)}
+.image-showcase img{width:100%;height:auto;display:block}
+
+@media(min-width:1024px){
+  .lg-flex-row{flex-direction:row}
+  .lg-w-half{width:50%}
+  .lg-text-left{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- HERO SECTION -->
+<!-- ============================================ -->
+<section class="relative overflow-hidden bg-luna-hero" style="min-height:90vh;display:flex;align-items:center;justify-content:center">
+  <!-- Decorative blobs -->
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;left:50%;top:33%;transform:translateX(-50%);height:500px;width:700px;border-radius:50%;background:rgba(176,86,246,0.1);filter:blur(60px)"></div>
+    <div style="position:absolute;right:-128px;top:0;height:400px;width:400px;border-radius:50%;background:rgba(242,228,249,0.05);filter:blur(60px)"></div>
+  </div>
+
+  <!-- Floating 3D Icons -->
+  <img src="https://www.gurusoluciones.com/hs-fs/hubfs/mm2025/hero-icono-megafono.webp?width=120&height=120" alt="Megáfono 3D" loading="lazy" class="float-icon float-delay-1 resp-img" style="top:12%;left:8%;width:100px;z-index:2;opacity:0.9">
+  <img src="https://www.gurusoluciones.com/hs-fs/hubfs/mm2025/20251202_hero-icono-luna.webp?width=80&height=80" alt="Luna logo 3D" loading="lazy" class="float-icon float-delay-2 resp-img" style="top:8%;left:50%;transform:translateX(-50%);width:70px;z-index:2;opacity:0.85">
+  <img src="https://www.gurusoluciones.com/hs-fs/hubfs/mm2025/hero-icono-chat.webp?width=100&height=100" alt="Chat bubble 3D" loading="lazy" class="float-icon float-delay-3 resp-img" style="top:15%;right:10%;width:90px;z-index:2;opacity:0.9">
+  <img src="https://www.gurusoluciones.com/hs-fs/hubfs/mm2025/hero-icono-whatsapp.webp?width=100&height=100" alt="WhatsApp 3D" loading="lazy" class="float-icon float-delay-4 resp-img" style="bottom:18%;left:10%;width:85px;z-index:2;opacity:0.9">
+  <img src="https://www.gurusoluciones.com/hs-fs/hubfs/mm2025/hero-icono-like.webp?width=120&height=120" alt="Like 3D" loading="lazy" class="float-icon float-delay-5 resp-img" style="bottom:22%;right:12%;width:95px;z-index:2;opacity:0.9">
+  <img src="https://www.gurusoluciones.com/hs-fs/hubfs/mm2025/20251204_bfc.png?width=100&height=100" alt="Luna avatar" loading="lazy" class="float-icon float-delay-3 resp-img" style="bottom:10%;right:6%;width:90px;z-index:2;opacity:0.95">
+
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;text-align:center;position:relative;z-index:10">
+    <div style="max-width:900px;margin:0 auto">
+      <!-- Guru white logo -->
+      <div style="margin-bottom:2rem">
+        <img src="https://www.gurusoluciones.com/hubfs/20211013_logo-blanco.svg" alt="Gurú Soluciones" loading="lazy" style="height:40px;margin:0 auto;display:block;opacity:0.9">
+      </div>
+      <div style="margin-bottom:2rem">
+        <span style="display:inline-block;padding:.625rem 1.25rem;font-size:.875rem;font-weight:600;border-radius:9999px;background:rgba(242,228,249,0.15);color:#F2E4F9;border:1px solid rgba(242,228,249,0.25);backdrop-filter:blur(12px)">Hola, soy Luna ✦</span>
+      </div>
+      <h1 style="font-family:'Montserrat',sans-serif;font-size:clamp(2.25rem,5vw,4.5rem);font-weight:800;letter-spacing:-0.025em;line-height:1.08;color:#fff">
+        El segundo cerebro de<br><span id="rotating-word" style="color:#CDFF22">tu negocio.</span>
+      </h1>
+      <p style="margin-top:2rem;font-size:1.2rem;line-height:1.7;color:rgba(255,255,255,0.75);max-width:680px;margin-left:auto;margin-right:auto">Soy la inteligencia artificial de Gurú que vive en tu negocio: gestiono tu CRM, segmento tus clientes con precisión quirúrgica, creo tu contenido para redes y lanzo tus campañas de WhatsApp mientras tú te enfocas en lo que importa.</p>
+      <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center">
+        <a href="#demo" class="btn-luna">Pide una demo para tu negocio</a>
+        <a href="#features" class="btn-luna-outline">Conoce qué hago</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rotating words script -->
+<script>
+(function(){
+  const words=['tu negocio.','tus ventas.','tu marketing.','tu CRM.'];
+  let i=0;const el=document.getElementById('rotating-word');
+  if(!el)return;
+  setInterval(()=>{i=(i+1)%words.length;el.style.opacity='0';el.style.transform='translateY(-20px)';
+  setTimeout(()=>{el.textContent=words[i];el.style.opacity='1';el.style.transform='translateY(0)'},300)},2500);
+  el.style.transition='opacity .3s ease,transform .3s ease';
+})();
+</script>
+
+<!-- ============================================ -->
+<!-- WEB / SALES ASSISTANT SECTION -->
+<!-- ============================================ -->
+<section class="relative overflow-hidden bg-luna-surface" id="features" style="padding:6rem 0">
+  <!-- Decorative blobs -->
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;left:-224px;top:-176px;height:520px;width:520px;border-radius:50%;background:rgba(242,228,249,0.4);filter:blur(60px)"></div>
+    <div style="position:absolute;left:96px;top:96px;height:560px;width:560px;border-radius:50%;background:rgba(233,213,255,0.3);filter:blur(60px)"></div>
+    <div style="position:absolute;right:0;top:0;height:720px;width:720px;transform:translateX(33%);border-radius:50%;background:rgba(255,255,255,0.9);filter:blur(60px)"></div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:10">
+    <div style="max-width:800px;margin:0 auto 4rem;text-align:center">
+      <p class="section-label" style="margin-bottom:1.5rem">TU WEB CONECTADA A LUNA</p>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.875rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;color:#240537">
+        Luna hace que tu página web sea <span class="title-highlight">realmente inteligente</span>
+      </h2>
+      <p style="margin-top:1.25rem;font-size:1.125rem;color:#4b5563;line-height:1.7">Más que una web, es una puerta de entrada a nuevos clientes.</p>
+    </div>
+    <!-- Feature cards grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto">
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">🎨</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Diseño profesional</h3><p style="color:#4b5563;line-height:1.7;margin:0">Creado para tu negocio, con tu marca y optimizado para convertir visitantes en clientes.</p></div>
+        </div>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">💬</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Tu sitio se conecta conmigo</h3><p style="color:#4b5563;line-height:1.7;margin:0">A través de un chat inteligente para atender consultas 24/7 sin que pierdas una sola oportunidad.</p></div>
+        </div>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">📋</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Registro y organizo cada contacto</h3><p style="color:#4b5563;line-height:1.7;margin:0">Cada persona que llega a tu web queda en tu CRM para que no pierdas ningún dato.</p></div>
+        </div>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">📈</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Análisis en tiempo real</h3><p style="color:#4b5563;line-height:1.7;margin:0">Sé exactamente qué funciona y qué no en tu web para tomar decisiones informadas.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp channel showcase (NEW) -->
+    <div style="max-width:700px;margin:3rem auto 0;border-radius:24px;background:rgba(242,228,249,0.45);border:1px solid rgba(176,86,246,0.15);padding:2.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:2rem;justify-content:center">
+      <img src="https://www.gurusoluciones.com/hs-fs/hubfs/mm2025/hero-icono-whatsapp.webp?width=100&height=100" alt="WhatsApp" loading="lazy" style="width:80px;height:80px;object-fit:contain">
+      <div style="text-align:center;flex:1;min-width:200px">
+        <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:1.25rem;color:#240537;margin:0 0 .25rem">Atiendo por todos tus canales 24/7</p>
+        <p style="color:#4b5563;font-size:.95rem;margin:0">WhatsApp, web chat, redes sociales — siempre disponible para tus clientes.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;text-align:center">
+      <a href="#demo" class="btn-luna-signature">Quiero mi web inteligente</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- CRM SECTION (split layout with image) -->
+<!-- ============================================ -->
+<section class="relative overflow-hidden bg-luna-signature" id="crm" style="padding:6rem 0">
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;left:-224px;top:-176px;height:520px;width:520px;border-radius:50%;background:rgba(242,228,249,0.4);filter:blur(60px)"></div>
+    <div style="position:absolute;right:0;top:0;height:720px;width:720px;transform:translateX(33%);border-radius:50%;background:rgba(255,255,255,0.9);filter:blur(60px)"></div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:10">
+    <div style="max-width:800px;margin:0 auto 4rem;text-align:center">
+      <p class="section-label" style="margin-bottom:1.5rem">TU CRM IMPULSADO POR LUNA</p>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.875rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;color:#240537">
+        Gestiono todo en <span class="title-highlight">un mismo lugar</span>
+      </h2>
+      <p style="margin-top:1.25rem;font-size:1.125rem;color:#4b5563;line-height:1.7">Reúno todas las interacciones de tu negocio y te digo exactamente qué hacer.</p>
+    </div>
+    <!-- Split layout: steps left, image right -->
+    <div style="display:flex;flex-wrap:wrap;gap:3rem;max-width:1100px;margin:0 auto;align-items:center">
+      <!-- Left: Steps -->
+      <div style="flex:1;min-width:300px">
+        <div style="display:flex;flex-direction:column;gap:2rem">
+          <div class="glass-card-luna" style="padding:2rem;display:flex;align-items:start;gap:1.5rem">
+            <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#4A0A81;display:flex;align-items:center;justify-content:center"><span style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:800;color:#CDFF22">01</span></div>
+            <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:700;color:#240537;margin:0 0 .5rem">Reúno todas las interacciones</h3><p style="color:#4b5563;line-height:1.7;margin:0">Interpreto cada mensaje, llamada y visita para que tengas una visión completa de cada cliente.</p></div>
+          </div>
+          <div class="glass-card-luna" style="padding:2rem;display:flex;align-items:start;gap:1.5rem">
+            <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#4A0A81;display:flex;align-items:center;justify-content:center"><span style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:800;color:#CDFF22">02</span></div>
+            <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:700;color:#240537;margin:0 0 .5rem">Te envío alertas inteligentes</h3><p style="color:#4b5563;line-height:1.7;margin:0">Para que no se te escape ninguna oportunidad de venta.</p></div>
+          </div>
+          <div class="glass-card-luna" style="padding:2rem;display:flex;align-items:start;gap:1.5rem">
+            <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#4A0A81;display:flex;align-items:center;justify-content:center"><span style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:800;color:#CDFF22">03</span></div>
+            <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:700;color:#240537;margin:0 0 .5rem">Convierto más leads en clientes</h3><p style="color:#4b5563;line-height:1.7;margin:0">Gracias a automatizaciones, alertas y reportes inteligentes que trabajan por ti.</p></div>
+          </div>
+        </div>
+      </div>
+      <!-- Right: CRM Dashboard Image -->
+      <div style="flex:1;min-width:300px">
+        <div class="image-showcase">
+          <img src="https://www.gurusoluciones.com/hubfs/frame_02-imagen-01%20new.png" alt="Dashboard CRM de Gurú" loading="lazy" class="resp-img">
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:3rem;text-align:center">
+      <a href="#demo" class="btn-luna">Quiero asesorarme</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- MICROSEGMENTACIÓN SECTION -->
+<!-- ============================================ -->
+<section class="relative overflow-hidden bg-luna-hero" id="microsegmentacion" style="padding:6rem 0">
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;left:50%;top:0;transform:translateX(-50%);height:600px;width:800px;border-radius:50%;background:rgba(242,228,249,0.1);filter:blur(60px)"></div>
+    <div style="position:absolute;right:0;bottom:0;height:400px;width:400px;border-radius:50%;background:rgba(176,86,246,0.08);filter:blur(60px)"></div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:10">
+    <div style="max-width:800px;margin:0 auto 4rem;text-align:center">
+      <span style="display:inline-block;padding:.625rem 1.25rem;font-size:.875rem;font-weight:700;border-radius:9999px;background:rgba(205,255,34,0.15);color:#CDFF22;border:1px solid rgba(205,255,34,0.25);margin-bottom:1.5rem">⭐ Mi superpoder</span>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.875rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;color:#fff">
+        Microsegmentación: <span class="text-luna-glow" style="color:#F2E4F9">la razón por la que convierto más</span>
+      </h2>
+      <p style="margin-top:1.25rem;font-size:1.125rem;color:rgba(255,255,255,0.7);line-height:1.7">No agrupo a tus clientes en categorías genéricas. Los conozco individualmente y creo segmentos ultra-específicos.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto">
+      <div class="glass-card" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:rgba(242,228,249,0.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(242,228,249,0.2)">🔄</div>
+          <div style="flex:1"><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#fff;margin:0 0 .5rem">Clientes que no vuelven hace 30 días</h3><p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 1rem">Los detecto automáticamente y les envío una oferta personalizada para traerlos de vuelta.</p>
+            <div style="display:flex;align-items:baseline;gap:.5rem"><span style="font-size:1.875rem;font-weight:800;color:#CDFF22;font-family:'Montserrat',sans-serif">+42%</span><span style="font-size:.875rem;color:rgba(255,255,255,0.4)">tasa de reactivación</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:rgba(242,228,249,0.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(242,228,249,0.2)">👑</div>
+          <div style="flex:1"><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#fff;margin:0 0 .5rem">Top compradores del mes</h3><p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 1rem">Identifico a tus mejores clientes y les doy trato VIP con acceso anticipado y descuentos exclusivos.</p>
+            <div style="display:flex;align-items:baseline;gap:.5rem"><span style="font-size:1.875rem;font-weight:800;color:#CDFF22;font-family:'Montserrat',sans-serif">+67%</span><span style="font-size:.875rem;color:rgba(255,255,255,0.4)">retención VIP</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:rgba(242,228,249,0.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(242,228,249,0.2)">🏷️</div>
+          <div style="flex:1"><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#fff;margin:0 0 .5rem">Clientes por tipo de servicio</h3><p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 1rem">Sé quién prefiere qué. Cuando lanzas algo nuevo, solo se lo muestro a quien realmente le interesa.</p>
+            <div style="display:flex;align-items:baseline;gap:.5rem"><span style="font-size:1.875rem;font-weight:800;color:#CDFF22;font-family:'Montserrat',sans-serif">3x</span><span style="font-size:.875rem;color:rgba(255,255,255,0.4)">mejor conversión</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:rgba(242,228,249,0.15);display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(242,228,249,0.2)">🎯</div>
+          <div style="flex:1"><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#fff;margin:0 0 .5rem">Segmentos por comportamiento</h3><p style="color:rgba(255,255,255,0.6);line-height:1.7;margin:0 0 1rem">Agrupo por frecuencia, ticket promedio, horario preferido y canal favorito. Cada mensaje es certero.</p>
+            <div style="display:flex;align-items:baseline;gap:.5rem"><span style="font-size:1.875rem;font-weight:800;color:#CDFF22;font-family:'Montserrat',sans-serif">89%</span><span style="font-size:.875rem;color:rgba(255,255,255,0.4)">relevancia del mensaje</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:3rem;text-align:center">
+      <a href="#demo" class="btn-luna">Quiero segmentar así</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SOCIAL MEDIA SECTION (with image) -->
+<!-- ============================================ -->
+<section class="relative overflow-hidden" id="social" style="padding:6rem 0;background:#fff">
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;left:-224px;top:-176px;height:520px;width:520px;border-radius:50%;background:rgba(242,228,249,0.3);filter:blur(60px)"></div>
+    <div style="position:absolute;right:0;top:0;height:720px;width:720px;transform:translateX(33%);border-radius:50%;background:rgba(255,255,255,0.8);filter:blur(60px)"></div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:10">
+    <div style="max-width:800px;margin:0 auto 2rem;text-align:center">
+      <p class="section-label" style="margin-bottom:1.5rem">CONTENIDOS &amp; REDES SOCIALES</p>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.875rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;color:#240537">
+        Creo contenido que <span class="title-highlight">conecta con tu audiencia</span>
+      </h2>
+      <p style="margin-top:1.25rem;font-size:1.125rem;color:#4b5563;line-height:1.7">No más bloqueo creativo. Genero ideas, escribo textos y te sugiero el mejor momento para publicar.</p>
+    </div>
+    <!-- Social media panel image -->
+    <div style="max-width:700px;margin:0 auto 3rem" class="image-showcase">
+      <img src="https://www.gurusoluciones.com/hubfs/mm2025/frame_03-imagen-02.webp" alt="Panel de Redes Sociales de Gurú" loading="lazy" class="resp-img">
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto">
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">✍️</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Generación de contenido</h3><p style="color:#4b5563;line-height:1.7;margin:0">Creo posts, captions y textos adaptados al tono de tu marca y a lo que tu audiencia quiere ver.</p></div>
+        </div>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">📅</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Calendario inteligente</h3><p style="color:#4b5563;line-height:1.7;margin:0">Te sugiero cuándo publicar para maximizar el alcance basándome en datos reales de tu cuenta.</p></div>
+        </div>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">📊</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Métricas que importan</h3><p style="color:#4b5563;line-height:1.7;margin:0">Analizo qué contenido funciona y te doy recomendaciones concretas para mejorar.</p></div>
+        </div>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">🤖</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Adaptación automática</h3><p style="color:#4b5563;line-height:1.7;margin:0">Un mismo contenido adaptado a cada plataforma: Instagram, Facebook, TikTok, LinkedIn.</p></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:3rem;text-align:center">
+      <a href="#demo" class="btn-luna-signature">Quiero crear contenido con Luna</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- WHATSAPP CAMPAIGNS SECTION -->
+<!-- ============================================ -->
+<section class="relative overflow-hidden bg-luna-signature" style="padding:6rem 0">
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;left:-224px;top:-176px;height:520px;width:520px;border-radius:50%;background:rgba(242,228,249,0.4);filter:blur(60px)"></div>
+    <div style="position:absolute;left:96px;top:96px;height:560px;width:560px;border-radius:50%;background:rgba(233,213,255,0.3);filter:blur(60px)"></div>
+    <div style="position:absolute;right:0;top:0;height:720px;width:720px;transform:translateX(33%);border-radius:50%;background:rgba(255,255,255,0.9);filter:blur(60px)"></div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:10">
+    <div style="max-width:800px;margin:0 auto 4rem;text-align:center">
+      <p class="section-label" style="margin-bottom:1.5rem">CAMPAÑAS DE WHATSAPP</p>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.875rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;color:#240537">
+        Lanzo campañas de WhatsApp que <span class="title-highlight">realmente convierten</span>
+      </h2>
+      <p style="margin-top:1.25rem;font-size:1.125rem;color:#4b5563;line-height:1.7">No es spam. Son mensajes personalizados, al cliente correcto, en el momento perfecto.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto">
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">📱</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Mensajes hiperpersonalizados</h3><p style="color:#4b5563;line-height:1.7;margin:0">Cada cliente recibe un mensaje pensado para él, basado en su historial y comportamiento.</p></div>
+        </div>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">⚡</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Automatización inteligente</h3><p style="color:#4b5563;line-height:1.7;margin:0">Configura una vez, yo me encargo de enviar en el momento óptimo para cada segmento.</p></div>
+        </div>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">📈</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Seguimiento en tiempo real</h3><p style="color:#4b5563;line-height:1.7;margin:0">Sé quién abrió, quién respondió y quién compró. Cada campaña aprende de la anterior.</p></div>
+        </div>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem">
+        <div style="display:flex;align-items:start;gap:1.25rem">
+          <div style="flex-shrink:0;width:56px;height:56px;border-radius:16px;background:#F2E4F9;display:flex;align-items:center;justify-content:center;font-size:1.5rem;border:1px solid rgba(176,86,246,0.1)">🎯</div>
+          <div><h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Segmentación precisa</h3><p style="color:#4b5563;line-height:1.7;margin:0">Gracias a mi microsegmentación, cada mensaje llega solo a quien realmente le interesa.</p></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:3rem;text-align:center">
+      <a href="#demo" class="btn-luna-signature">Quiero campañas que conviertan</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- ECOSISTEMA SECTION (with email image) -->
+<!-- ============================================ -->
+<section class="relative overflow-hidden bg-luna-surface" style="padding:6rem 0">
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;left:-224px;top:-176px;height:520px;width:520px;border-radius:50%;background:rgba(242,228,249,0.3);filter:blur(60px)"></div>
+    <div style="position:absolute;right:0;top:0;height:720px;width:720px;transform:translateX(33%);border-radius:50%;background:rgba(255,255,255,0.8);filter:blur(60px)"></div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:10">
+    <div style="max-width:800px;margin:0 auto 2rem;text-align:center">
+      <p class="section-label" style="margin-bottom:1.5rem">TU ECOSISTEMA POTENCIADO POR LUNA</p>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.875rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;color:#240537">
+        Impulso cada módulo de tu <span class="title-highlight">ecosistema digital</span>
+      </h2>
+    </div>
+    <!-- Email marketing image -->
+    <div style="max-width:700px;margin:0 auto 3rem" class="image-showcase">
+      <img src="https://www.gurusoluciones.com/hubfs/mm2025/frame_03-imagen-01.webp" alt="Email Marketing de Gurú" loading="lazy" class="resp-img">
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto">
+      <div class="glass-card-luna" style="padding:2rem;text-align:center">
+        <div style="width:56px;height:56px;border-radius:16px;background:#4A0A81;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem"><span style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:800;color:#CDFF22">01</span></div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">E-mail marketing</h3>
+        <p style="color:#4b5563;line-height:1.7;margin:0">Con mensajes optimizados por mí, que llegan al cliente correcto en el momento perfecto.</p>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem;text-align:center">
+        <div style="width:56px;height:56px;border-radius:16px;background:#4A0A81;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem"><span style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:800;color:#CDFF22">02</span></div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Panel de Redes Sociales</h3>
+        <p style="color:#4b5563;line-height:1.7;margin:0">Con sugerencias inteligentes de contenido basadas en tu negocio y tu audiencia.</p>
+      </div>
+      <div class="glass-card-luna" style="padding:2rem;text-align:center">
+        <div style="width:56px;height:56px;border-radius:16px;background:#4A0A81;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem"><span style="font-family:'Montserrat',sans-serif;font-size:1.25rem;font-weight:800;color:#CDFF22">03</span></div>
+        <h3 style="font-family:'Montserrat',sans-serif;font-size:1.125rem;font-weight:700;color:#240537;margin:0 0 .5rem">Agenda online</h3>
+        <p style="color:#4b5563;line-height:1.7;margin:0">Que organiza turnos y automatiza recordatorios para que nunca pierdas una cita.</p>
+      </div>
+    </div>
+    <div style="margin-top:3rem;text-align:center">
+      <a href="#demo" class="btn-luna-signature">Quiero potenciar mi negocio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- STATS SECTION (with 3D icons) -->
+<!-- ============================================ -->
+<section class="bg-luna-signature" style="padding:6rem 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem">
+    <div style="max-width:900px;margin:0 auto;border-radius:32px;border:2px solid rgba(176,86,246,0.12);padding:3rem 2rem;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);text-align:center">
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.875rem,3vw,2.5rem);font-weight:800;color:#240537;margin:0 0 .75rem">Nuestra experiencia respalda tus resultados</h2>
+      <p style="color:#4b5563;margin:0 0 3rem">Miles de negocios ya confían en gurú para crecer en internet:</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem">
+        <!-- Stat 1: Rocket -->
+        <div style="text-align:center">
+          <img src="https://www.gurusoluciones.com/hs-fs/hubfs/20251127_2_frame_04-icono-01.png?width=80&height=80" alt="Rocket" loading="lazy" style="width:64px;height:64px;object-fit:contain;margin:0 auto 1rem;display:block">
+          <div style="font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#4A0A81;font-family:'Montserrat',sans-serif;margin-bottom:.5rem">+1.423</div>
+          <p style="color:#240537;font-weight:700;font-family:'Montserrat',sans-serif;margin:0">webs hechas</p>
+          <p style="color:#6b7280;font-size:.875rem;margin:.25rem 0 0">en Argentina y Latinoamérica (2024)</p>
+        </div>
+        <!-- Stat 2: Heart -->
+        <div style="text-align:center">
+          <img src="https://www.gurusoluciones.com/hs-fs/hubfs/20251127_2_frame_04-icono-02.png?width=80&height=80" alt="Heart" loading="lazy" style="width:64px;height:64px;object-fit:contain;margin:0 auto 1rem;display:block">
+          <div style="font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#4A0A81;font-family:'Montserrat',sans-serif;margin-bottom:.5rem">+3.153</div>
+          <p style="color:#240537;font-weight:700;font-family:'Montserrat',sans-serif;margin:0">negocios</p>
+          <p style="color:#6b7280;font-size:.875rem;margin:.25rem 0 0">nos eligen para vender más</p>
+        </div>
+        <!-- Stat 3: Star -->
+        <div style="text-align:center">
+          <img src="https://www.gurusoluciones.com/hs-fs/hubfs/20251127_2_frame_04-icono-03.png?width=80&height=80" alt="Star" loading="lazy" style="width:64px;height:64px;object-fit:contain;margin:0 auto 1rem;display:block">
+          <div style="font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#4A0A81;font-family:'Montserrat',sans-serif;margin-bottom:.5rem">+10</div>
+          <p style="color:#240537;font-weight:700;font-family:'Montserrat',sans-serif;margin:0">años de experiencia</p>
+          <p style="color:#6b7280;font-size:.875rem;margin:.25rem 0 0">acompañando empresas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FINAL CTA SECTION (with Luna icon) -->
+<!-- ============================================ -->
+<section class="relative overflow-hidden bg-luna-hero" id="demo" style="padding:6rem 0">
+  <div style="pointer-events:none;position:absolute;inset:0;z-index:0">
+    <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:500px;width:500px;border-radius:50%;background:rgba(242,228,249,0.1);filter:blur(60px)"></div>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;position:relative;z-index:10">
+    <div style="text-align:center;max-width:800px;margin:0 auto">
+      <span style="display:inline-block;padding:.625rem 1.25rem;font-size:.875rem;font-weight:600;border-radius:9999px;background:rgba(242,228,249,0.15);color:#F2E4F9;border:1px solid rgba(242,228,249,0.25);margin-bottom:2rem">¿Listo para crecer?</span>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:clamp(1.875rem,3.5vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;color:#fff">
+        Con gurú, tu negocio <img src="https://www.gurusoluciones.com/hs-fs/hubfs/20251126_hero-icono-luna.png?width=48&height=48" alt="Luna" loading="lazy" style="display:inline-block;width:42px;height:42px;vertical-align:middle;margin:0 .25rem"> se organiza, crece y <span style="color:#CDFF22">se potencia.</span>
+      </h2>
+      <div style="margin-top:2.5rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:center">
+        <a href="#demo" class="btn-luna">Pide una demo para tu negocio</a>
+        <a href="#trial" class="btn-luna-outline">Iniciar prueba gratuita de 30 días</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER -->
+<!-- ============================================ -->
+<footer style="background:#fff;padding:2.5rem 0;border-top:1px solid #F2E4F9">
+  <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;text-align:center">
+    <img src="https://www.gurusoluciones.com/hubfs/20211013_logo-blanco.svg" alt="Gurú Soluciones" loading="lazy" style="height:30px;margin:0 auto 1rem;display:block;filter:invert(1) brightness(0.3)">
+    <p style="color:#9ca3af;font-size:.875rem;margin:0">&copy; 2026 Gurú Soluciones. Todos los derechos reservados.</p>
+    <p style="color:rgba(176,86,246,0.4);font-size:.75rem;margin:.5rem 0 0">Potenciado por LunaOS — Inteligencia Artificial para tu negocio.</p>
+  </div>
+</footer>
+
+</body>
+</html>
