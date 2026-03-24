@@ -105,7 +105,7 @@ function HeroSection() {
             <span className="font-display text-lg md:text-xl font-bold tracking-wide text-[#B056F6]">Hola, soy Luna ✦</span>
           </motion.div>
           <motion.h1 variants={fadeInUp} className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-[#240537]">
-            El segundo cerebro de<br /><RotatingWords words={['tu negocio.', 'tus ventas.', 'tu marketing.', 'tu CRM.']} />
+            El cerebro de<br /><RotatingWords words={['tu negocio.', 'tus ventas.', 'tu marketing.', 'tu CRM.']} />
           </motion.h1>
           <motion.p variants={fadeInUp} className="mt-6 text-lg md:text-xl leading-relaxed text-[#240537]/70 max-w-2xl mx-auto font-body">
             Gestiono tu CRM, segmento tus clientes, creo contenido y lanzo campañas. Soy tu IA aliada para crecer.
@@ -124,10 +124,10 @@ function HeroSection() {
 // =============================================================================
 function SalesAssistantSection() {
   const channels = [
-    { icon: '💬', name: 'WhatsApp Business', desc: 'Respondo al instante, proceso audios y retomo ventas donde se quedaron.' },
-    { icon: '📸', name: 'Instagram', desc: 'Gestiono DMs, menciones y cierro ventas desde Stories.' },
-    { icon: '✉️', name: 'Email', desc: 'Cotizaciones profesionales y seguimiento segmentado.' },
-    { icon: '🌐', name: 'Chat Web', desc: 'Atiendo visitantes 24/7 y capturo leads automáticamente.' },
+    { icon: '💬', name: 'WhatsApp Business', desc: 'Respondo mensajes y audios al instante. Si un cliente pregunta precio, le envío la cotización sin que intervengas.' },
+    { icon: '📸', name: 'Instagram', desc: 'Contesto DMs, respondo comentarios y menciones. Si alguien pregunta por un producto en Stories, yo cierro la venta.' },
+    { icon: '✉️', name: 'Email', desc: 'Envío cotizaciones personalizadas, hago seguimiento automático y recontacto a quienes no respondieron en 48h.' },
+    { icon: '🌐', name: 'Chat Web', desc: 'Atiendo a cada visitante de tu web 24/7. Capturo sus datos y los paso directo a tu CRM con etiquetas.' },
   ]
 
   return (
@@ -150,11 +150,11 @@ function SalesAssistantSection() {
             <motion.div variants={fadeInLeft} className="mt-8 space-y-4">
               <div className="flex items-start gap-4">
                 <span className="text-2xl">🧠</span>
-                <p className="text-[#240537]/70 font-body"><strong className="text-[#240537]">Priorizo oportunidades:</strong> te indico cuáles leads tienen mayor probabilidad de convertir.</p>
+                <p className="text-[#240537]/70 font-body"><strong className="text-[#240537]">Califico y priorizo tus leads:</strong> analizo el comportamiento de cada contacto y te digo quién tiene mayor probabilidad de comprar. Si un lead pidió cotización y volvió a tu web, sube al tope de tu lista.</p>
               </div>
               <div className="flex items-start gap-4">
                 <span className="text-2xl">🔔</span>
-                <p className="text-[#240537]/70 font-body"><strong className="text-[#240537]">Alertas en tiempo real:</strong> cuando un cliente muestra señales de compra, te aviso al instante.</p>
+                <p className="text-[#240537]/70 font-body"><strong className="text-[#240537]">Alertas en tiempo real:</strong> cuando alguien abre tu cotización 3 veces o responde después de días, te aviso al instante. Así inviertes tu tiempo solo en quienes realmente van a convertir.</p>
               </div>
             </motion.div>
             <motion.div variants={fadeInLeft} className="mt-8">
@@ -183,9 +183,9 @@ function SalesAssistantSection() {
 // =============================================================================
 function CRMSection() {
   const steps = [
-    { number: '01', title: 'Reúno todas las interacciones', description: 'Las interpreto y organizo para que tengas una visión completa de cada cliente.' },
-    { number: '02', title: 'Te envío alertas inteligentes', description: 'Para que no se te escape ninguna oportunidad de venta.' },
-    { number: '03', title: 'Convierto más leads en clientes', description: 'Gracias a automatizaciones y reportes inteligentes que trabajan por ti.' },
+    { number: '01', title: 'Centralizo todos tus contactos', description: 'Importo tu base desde Excel, WhatsApp o formularios web. Cada contacto queda en un solo lugar, sin duplicados.' },
+    { number: '02', title: 'Etiqueto y organizo automáticamente', description: 'Clasifico a cada cliente por origen, interés o estado (nuevo, activo, inactivo). Tus etiquetas se actualizan solas.' },
+    { number: '03', title: 'Segmento para que vendas más', description: 'Creo grupos como "clientes que no compran hace 30 días" o "interesados en X servicio". Cada acción va al público correcto.' },
   ]
 
   return (
@@ -222,7 +222,7 @@ function CRMSection() {
           {/* Columna derecha: imagen */}
           <motion.div className="flex-1" variants={fadeInRight} initial="hidden" whileInView="visible" viewport={viewportOnce}>
             <div className="rounded-[32px] border-2 border-[#B056F6]/30 p-6 bg-gradient-to-br from-[#F2E4F9]/20 to-white overflow-hidden">
-              <img src="https://www.gurusoluciones.com/hubfs/frame_02-imagen-01%20new.png" alt="CRM Dashboard" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
+              <img src="/organizo-todo-crm.webp" alt="CRM Dashboard" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
             </div>
           </motion.div>
         </div>
@@ -290,10 +290,10 @@ function MicrosegmentacionSection() {
 // =============================================================================
 function SocialMediaSection() {
   const features = [
-    { icon: '✍️', title: 'Genero contenido a tu medida', description: 'Posts, captions y textos adaptados al tono de tu marca.' },
-    { icon: '📅', title: 'Organizo tu calendario', description: 'Te sugiero cuándo publicar basándome en datos reales.' },
-    { icon: '📊', title: 'Mido lo que importa', description: 'Analizo qué funciona y te doy recomendaciones concretas.' },
-    { icon: '🤖', title: 'Adapto todo automáticamente', description: 'Un contenido adaptado a Instagram, Facebook, TikTok y LinkedIn.' },
+    { icon: '✍️', title: 'Escribo posts listos para publicar', description: 'Carruseles, captions para reels, textos para stories. Solo apruebas y listo.' },
+    { icon: '📅', title: 'Armo tu calendario del mes', description: 'Te propongo qué publicar cada día, con horarios óptimos para tu audiencia.' },
+    { icon: '🔄', title: 'Adapto cada pieza a cada red', description: 'Un mismo tema se convierte en un carrusel para Instagram, un video corto para TikTok y un post para LinkedIn.' },
+    { icon: '📊', title: 'Analizo qué funciona y ajusto', description: 'Detecto qué tipo de contenido genera más interacción y creo más de lo que convierte.' },
   ]
 
   return (
@@ -307,7 +307,7 @@ function SocialMediaSection() {
           {/* Columna izquierda: imagen */}
           <motion.div className="flex-1" variants={fadeInLeft} initial="hidden" whileInView="visible" viewport={viewportOnce}>
             <div className="rounded-[32px] border-2 border-[#B056F6]/20 p-3 bg-white overflow-hidden shadow-lg">
-              <img src="https://www.gurusoluciones.com/hubfs/mm2025/frame_03-imagen-02.webp" alt="Panel de redes sociales" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
+              <img src="/creo-contenido-audiencia.webp" alt="Panel de redes sociales" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
             </div>
           </motion.div>
 
@@ -318,7 +318,7 @@ function SocialMediaSection() {
               Creo contenido que <span className="title-highlight">conecta con tu audiencia</span>
             </motion.h2>
             <motion.p variants={fadeInRight} className="mt-4 text-lg text-[#240537]/60 font-body leading-relaxed mb-6">
-              Se acabó el bloqueo creativo. Genero ideas, escribo textos y te sugiero el mejor momento para publicar.
+              Dime de qué trata tu negocio y yo me encargo: ideas, textos, formatos y calendario. Todo listo para que solo apruebes y publiques.
             </motion.p>
             <div className="space-y-4">
               {features.map((feat) => (
@@ -346,10 +346,10 @@ function SocialMediaSection() {
 // =============================================================================
 function WhatsAppSection() {
   const features = [
-    { icon: '📱', title: 'Mensajes hiperpersonalizados', description: 'Basados en el historial y comportamiento de cada cliente.' },
-    { icon: '⚡', title: 'Automatizo el envío', description: 'Configura una vez, yo envío en el momento óptimo.' },
-    { icon: '📈', title: 'Mido cada resultado', description: 'Quién abrió, respondió y compró. Cada campaña mejora.' },
-    { icon: '🎯', title: 'Segmento con precisión', description: 'Cada mensaje llega solo a quien realmente le interesa.' },
+    { icon: '🔄', title: 'Recupero clientes inactivos', description: '"Hace 30 días que no nos visitas. Tenemos un 20% off esperándote". Automático y personalizado.' },
+    { icon: '🎯', title: 'Lanzo promos al segmento justo', description: '¿Nuevo servicio? Se lo envío solo a quienes mostraron interés. Nada de spam masivo.' },
+    { icon: '🤝', title: 'Hago seguimiento post-venta', description: 'Después de cada compra, envío un mensaje de agradecimiento y una encuesta. Fidelizo sin que muevas un dedo.' },
+    { icon: '📈', title: 'Mido cada campaña en tiempo real', description: 'Quién abrió, quién respondió, quién compró. Cada envío es mejor que el anterior.' },
   ]
 
   return (
@@ -367,7 +367,7 @@ function WhatsAppSection() {
               Lanzo campañas que <span className="title-highlight">realmente convierten</span>
             </motion.h2>
             <motion.p variants={fadeInLeft} className="mt-4 text-lg text-gray-600 font-body leading-relaxed mb-6">
-              No es spam. Son mensajes personalizados, al cliente correcto, en el momento perfecto.
+              Campañas por WhatsApp Business API con mensajes que llegan al cliente correcto, con la oferta correcta, en el momento justo.
             </motion.p>
             <div className="space-y-4">
               {features.map((feat) => (
@@ -387,10 +387,8 @@ function WhatsAppSection() {
 
           {/* Columna derecha: visual WhatsApp */}
           <motion.div className="flex-1" variants={fadeInRight} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-            <div className="rounded-[32px] bg-gradient-to-br from-[#25D366]/10 to-[#F2E4F9]/20 border-2 border-[#B056F6]/15 p-8 lg:p-12 flex flex-col items-center justify-center text-center">
-              <img src="https://www.gurusoluciones.com/hs-fs/hubfs/mm2025/hero-icono-whatsapp.webp?width=120&height=120" alt="WhatsApp" className="w-24 h-24 mb-6 object-contain" loading="lazy" />
-              <p className="font-display font-bold text-[#240537] text-xl mb-2">WhatsApp Business API</p>
-              <p className="text-[#240537]/60 font-body">Mensajes masivos personalizados con la potencia de la microsegmentación de Luna.</p>
+            <div className="rounded-[32px] border-2 border-[#B056F6]/20 p-3 bg-white overflow-hidden shadow-lg">
+              <img src="/lanzo-campanas-convierten.webp" alt="Campañas WhatsApp" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
             </div>
           </motion.div>
         </div>
@@ -401,10 +399,10 @@ function WhatsAppSection() {
 
 function EmailMarketingSection() {
   const features = [
-    { icon: '✉️', title: 'Diseño tus plantillas', description: 'Profesionales y adaptadas a tu marca.' },
-    { icon: '🎯', title: 'Segmento cada envío', description: 'Cada email llega al segmento correcto.' },
-    { icon: '⏰', title: 'Optimizo el momento', description: 'Envío cuando tus clientes realmente abren.' },
-    { icon: '📊', title: 'Aprendo de cada campaña', description: 'Apertura, clics, conversiones. Siempre mejorando.' },
+    { icon: '✉️', title: 'Diseño emails con tu marca', description: 'Plantillas profesionales con tus colores, logo y tono. Listas en minutos, no en horas.' },
+    { icon: '🎯', title: 'Envío al segmento correcto', description: 'Novedades solo a clientes activos, reactivación a los que no abren hace 60 días.' },
+    { icon: '⏰', title: 'Elijo el mejor horario', description: 'Analizo cuándo abren tus clientes y programo cada envío en su momento óptimo.' },
+    { icon: '📊', title: 'Optimizo con cada envío', description: 'Pruebo asuntos, horarios y contenido. Cada campaña convierte más que la anterior.' },
   ]
 
   return (
@@ -418,7 +416,7 @@ function EmailMarketingSection() {
           {/* Columna derecha (visualmente): imagen */}
           <motion.div className="flex-1" variants={fadeInRight} initial="hidden" whileInView="visible" viewport={viewportOnce}>
             <div className="rounded-[32px] border-2 border-[#B056F6]/20 p-3 bg-white overflow-hidden shadow-lg">
-              <img src="https://www.gurusoluciones.com/hubfs/mm2025/frame_03-imagen-01.webp" alt="Plantilla de email" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
+              <img src="/envio-emails-momento-perfecto.webp" alt="Plantilla de email" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
             </div>
           </motion.div>
 
@@ -429,7 +427,7 @@ function EmailMarketingSection() {
               Envío emails que <span className="title-highlight">llegan en el momento perfecto</span>
             </motion.h2>
             <motion.p variants={fadeInLeft} className="mt-4 text-lg text-[#240537]/60 font-body leading-relaxed mb-6">
-              Diseño, segmento y envío tus campañas de email con precisión quirúrgica.
+              Emails que no terminan en spam. Segmentados, bien diseñados y enviados cuando tu cliente realmente los va a abrir.
             </motion.p>
             <div className="space-y-4">
               {features.map((feat) => (
