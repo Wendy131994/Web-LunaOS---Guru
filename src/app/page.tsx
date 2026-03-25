@@ -101,6 +101,9 @@ function HeroSection() {
 
       <div className="container mx-auto px-4 md:px-6 text-center relative z-10 pt-16">
         <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-4xl mx-auto">
+          <motion.div variants={fadeInUp} className="mb-6">
+            <img src="/luna-iso.png" alt="Luna" className="w-20 h-20 mx-auto" loading="lazy" />
+          </motion.div>
           <motion.div variants={fadeInUp} className="mb-8">
             <span className="font-display text-lg md:text-xl font-bold tracking-wide text-[#B056F6]">Hola, soy Luna ✦</span>
           </motion.div>
@@ -196,16 +199,23 @@ function CRMSection() {
       </div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          {/* Columna izquierda: texto + steps */}
+          {/* Columna izquierda: imagen */}
+          <motion.div className="flex-1" variants={fadeInLeft} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+            <div className="rounded-[32px] border-2 border-[#B056F6]/30 p-6 bg-gradient-to-br from-[#F2E4F9]/20 to-white overflow-hidden">
+              <img src="/organizo-todo-crm.webp" alt="CRM Dashboard" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
+            </div>
+          </motion.div>
+
+          {/* Columna derecha: texto + steps */}
           <motion.div className="flex-1" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-            <motion.div variants={fadeInLeft} className="mb-4"><span className="section-label">Tu CRM impulsado por Luna</span></motion.div>
-            <motion.h2 variants={fadeInLeft} className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] text-[#240537]">
+            <motion.div variants={fadeInRight} className="mb-4"><span className="section-label">Tu CRM impulsado por Luna</span></motion.div>
+            <motion.h2 variants={fadeInRight} className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] text-[#240537]">
               Organizo todo en <span className="title-highlight">un mismo lugar</span>
             </motion.h2>
             <div className="mb-8" />
             <div className="space-y-5">
               {steps.map((step) => (
-                <motion.div key={step.number} variants={fadeInLeft} className="flex items-start gap-5 glass-card-luna p-6">
+                <motion.div key={step.number} variants={fadeInRight} className="flex items-start gap-5 glass-card-luna p-6">
                   <span className="font-display text-xl font-extrabold text-[#B056F6]">{step.number}.</span>
                   <div>
                     <h3 className="font-display text-base font-bold text-[#240537] mb-1">{step.title}</h3>
@@ -214,16 +224,9 @@ function CRMSection() {
                 </motion.div>
               ))}
             </div>
-            <motion.div variants={fadeInLeft} className="mt-8">
+            <motion.div variants={fadeInRight} className="mt-8">
               <motion.a href="#demo" whileHover={{ y: -3, boxShadow: '0 0 40px rgba(205, 255, 34, 0.3)' }} whileTap={{ scale: 0.98 }} className="btn-luna text-lg">Quiero asesorarme</motion.a>
             </motion.div>
-          </motion.div>
-
-          {/* Columna derecha: imagen */}
-          <motion.div className="flex-1" variants={fadeInRight} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-            <div className="rounded-[32px] border-2 border-[#B056F6]/30 p-6 bg-gradient-to-br from-[#F2E4F9]/20 to-white overflow-hidden">
-              <img src="/organizo-todo-crm.webp" alt="CRM Dashboard" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
-            </div>
           </motion.div>
         </div>
       </div>
@@ -412,26 +415,26 @@ function EmailMarketingSection() {
         <div className="absolute right-0 top-0 h-[720px] w-[720px] translate-x-1/3 rounded-full bg-white/50 blur-3xl" />
       </div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row-reverse gap-12 lg:gap-16 items-center">
-          {/* Columna derecha (visualmente): imagen */}
-          <motion.div className="flex-1" variants={fadeInRight} initial="hidden" whileInView="visible" viewport={viewportOnce}>
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          {/* Columna izquierda: imagen */}
+          <motion.div className="flex-1" variants={fadeInLeft} initial="hidden" whileInView="visible" viewport={viewportOnce}>
             <div className="rounded-[32px] border-2 border-[#B056F6]/20 p-3 bg-white overflow-hidden shadow-lg">
               <img src="/envio-emails-momento-perfecto.webp" alt="Plantilla de email" className="w-full h-auto rounded-2xl object-cover" loading="lazy" />
             </div>
           </motion.div>
 
-          {/* Columna izquierda (visualmente): texto */}
+          {/* Columna derecha: texto */}
           <motion.div className="flex-1" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportOnce}>
-            <motion.div variants={fadeInLeft} className="mb-4"><span className="section-label">E-mail marketing</span></motion.div>
-            <motion.h2 variants={fadeInLeft} className="font-display text-3xl md:text-4xl font-extrabold tracking-tight leading-[1.1] text-[#240537]">
+            <motion.div variants={fadeInRight} className="mb-4"><span className="section-label">E-mail marketing</span></motion.div>
+            <motion.h2 variants={fadeInRight} className="font-display text-3xl md:text-4xl font-extrabold tracking-tight leading-[1.1] text-[#240537]">
               Envío emails que <span className="title-highlight">llegan en el momento perfecto</span>
             </motion.h2>
-            <motion.p variants={fadeInLeft} className="mt-4 text-lg text-[#240537]/60 font-body leading-relaxed mb-6">
+            <motion.p variants={fadeInRight} className="mt-4 text-lg text-[#240537]/60 font-body leading-relaxed mb-6">
               Emails que no terminan en spam. Segmentados, bien diseñados y enviados cuando tu cliente realmente los va a abrir.
             </motion.p>
             <div className="space-y-4">
               {features.map((feat) => (
-                <motion.div key={feat.title} variants={fadeInLeft} className="flex items-start gap-4">
+                <motion.div key={feat.title} variants={fadeInRight} className="flex items-start gap-4">
                   <div className="shrink-0 w-10 h-10 rounded-xl bg-[#F2E4F9] flex items-center justify-center text-xl border border-[#B056F6]/10">{feat.icon}</div>
                   <div>
                     <h3 className="font-display text-base font-bold text-[#240537]">{feat.title}</h3>
@@ -440,7 +443,7 @@ function EmailMarketingSection() {
                 </motion.div>
               ))}
             </div>
-            <motion.div variants={fadeInLeft} className="mt-8">
+            <motion.div variants={fadeInRight} className="mt-8">
               <motion.a href="#demo" whileHover={{ y: -3, boxShadow: '0 0 40px rgba(205, 255, 34, 0.3)' }} whileTap={{ scale: 0.98 }} className="btn-luna text-lg">Quiero email marketing con Luna</motion.a>
             </motion.div>
           </motion.div>
@@ -494,8 +497,6 @@ function FinalCTASection() {
         <motion.div className="text-center max-w-3xl mx-auto" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportOnce}>
           <motion.h2 variants={fadeInUp} className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.1] text-[#240537]">
             Con gurú, tu negocio se organiza, crece y <span className="text-[#B056F6]">se potencia.</span>
-            {' '}
-            <img src="https://www.gurusoluciones.com/hs-fs/hubfs/20251126_hero-icono-luna.png?width=48&height=48" alt="Luna" className="inline-block w-8 h-8 ml-2" loading="lazy" />
           </motion.h2>
           <motion.div variants={fadeInUp} className="mt-10 flex justify-center">
             <motion.a href="#demo" whileHover={{ y: -3, boxShadow: '0 0 40px rgba(205, 255, 34, 0.3)' }} whileTap={{ scale: 0.98 }} className="btn-luna text-lg">Pide una demo para tu negocio</motion.a>
